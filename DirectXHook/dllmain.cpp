@@ -132,6 +132,14 @@ void move_to(float x, float y, float smooth, int screenWidth, float screenHeight
 		}
 	}
 
+	if (target_x <= 1.f && target_x >= -1.f)
+	{
+		 target_x = -(center_x - x);
+	}
+	if (target_y <= 1.f && target_y >= -1.f)
+	{
+		target_y = -(center_y - y);
+	}
 	mouse_event(MOUSEEVENTF_MOVE, static_cast<DWORD>(target_x), static_cast<DWORD>(target_y), 0, 0);
 }
 
